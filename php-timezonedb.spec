@@ -5,7 +5,7 @@
 
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
-Version:	2007.3
+Version:	2007.5
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
@@ -65,5 +65,3 @@ EOF
 %dir %{_sysconfdir}/php.d/%{modname}
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
-
