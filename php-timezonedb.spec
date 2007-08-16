@@ -6,7 +6,7 @@
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
 Version:	2007.5
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/timezonedb/
@@ -36,15 +36,7 @@ find . -type f|xargs file|grep 'CRLF'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 find . -type f|xargs file|grep 'text'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 
 %build
-export CFLAGS="%{optflags}"
-export CXXFLAGS="%{optflags}"
-export FFLAGS="%{optflags}"
-
-%if %mdkversion >= 200710
-export CFLAGS="$CFLAGS -fstack-protector"
-export CXXFLAGS="$CXXFLAGS -fstack-protector"
-export FFLAGS="$FFLAGS -fstack-protector"
-%endif
+%serverbuild
 
 phpize
 %configure2_5x --with-libdir=%{_lib} \
