@@ -5,12 +5,12 @@
 
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
-Version:	2007.5
-Release:	%mkrel 4
+Version:	2007.8
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/timezonedb/
-Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
+Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	file
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
