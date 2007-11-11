@@ -6,7 +6,7 @@
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
 Version:	2007.9
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/timezonedb/
@@ -56,6 +56,18 @@ install -m0755 %{soname} %{buildroot}%{_libdir}/php/extensions/
 cat > %{buildroot}%{_sysconfdir}/php.d/%{inifile} << EOF
 extension = %{soname}
 EOF
+
+%post
+if [ -f /var/lock/subsys/httpd ]; then
+    %{_initrddir}/httpd restart >/dev/null || :
+fi
+
+%postun
+if [ "$1" = "0" ]; then
+    if [ -f /var/lock/subsys/httpd ]; then
+	%{_initrddir}/httpd restart >/dev/null || :
+    fi
+fi
 
 %clean
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
