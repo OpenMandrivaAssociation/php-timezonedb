@@ -5,7 +5,7 @@
 
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
-Version:	2007.11
+Version:	2009.10
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
@@ -13,7 +13,8 @@ URL:		http://pecl.php.net/package/timezonedb/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	file
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+Epoch:		3
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This extension is a drop-in replacement for the builtin timezone database that
@@ -46,7 +47,7 @@ phpize
 mv modules/*.so .
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}%{_libdir}/php/extensions
 install -d %{buildroot}%{_sysconfdir}/php.d/%{modname}
@@ -70,7 +71,7 @@ if [ "$1" = "0" ]; then
 fi
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
