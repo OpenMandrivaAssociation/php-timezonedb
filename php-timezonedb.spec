@@ -6,7 +6,7 @@
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
 Version:	2010.3
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/timezonedb/
@@ -50,7 +50,7 @@ mv modules/*.so .
 rm -rf %{buildroot}
 
 install -d %{buildroot}%{_libdir}/php/extensions
-install -d %{buildroot}%{_sysconfdir}/php.d/%{modname}
+install -d %{buildroot}%{_sysconfdir}/php.d
 
 install -m0755 %{soname} %{buildroot}%{_libdir}/php/extensions/
 
@@ -76,6 +76,5 @@ rm -rf %{buildroot}
 %files 
 %defattr(-,root,root)
 %doc CREDITS package*.xml
-%dir %{_sysconfdir}/php.d/%{modname}
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
