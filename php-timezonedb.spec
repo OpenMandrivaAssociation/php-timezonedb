@@ -3,10 +3,20 @@
 %define soname %{modname}.so
 %define inifile A60_%{modname}.ini
 
+# (tpg) define release here
+%if %mandriva_branch == Cooker
+# Cooker
+%define release %mkrel 1
+%else
+# Old distros
+%define subrel 1
+%define release %mkrel 0
+%endif
+
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
-Version:	2010.12
-Release:	%mkrel 1
+Version:	2010.13
+Release:	%{release}
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/timezonedb/
