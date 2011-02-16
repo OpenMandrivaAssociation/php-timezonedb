@@ -15,7 +15,7 @@
 
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
-Version:	2011.1
+Version:	2011.2
 Release:	%{release}
 Group:		Development/PHP
 License:	PHP License
