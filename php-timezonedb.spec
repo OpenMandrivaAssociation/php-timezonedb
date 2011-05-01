@@ -15,12 +15,13 @@
 
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
-Version:	2011.5
+Version:	2011.7
 Release:	%{release}
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/timezonedb/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
+Source1:	A60_timezonedb.ini
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	file
 Epoch:		3
@@ -38,6 +39,8 @@ located at ftp://elsie.nci.nih.gov/pub/.
 
 %setup -q -n %{modname}-%{version}
 [ "../package*.xml" != "/" ] && mv ../package*.xml .
+
+cp %{SOURCE1} %{inifile}
 
 # fix permissions
 find . -type f | xargs chmod 644
@@ -63,10 +66,7 @@ install -d %{buildroot}%{_libdir}/php/extensions
 install -d %{buildroot}%{_sysconfdir}/php.d
 
 install -m0755 %{soname} %{buildroot}%{_libdir}/php/extensions/
-
-cat > %{buildroot}%{_sysconfdir}/php.d/%{inifile} << EOF
-extension = %{soname}
-EOF
+install -m0644 %{inifile} %{buildroot}%{_sysconfdir}/php.d/%{inifile}
 
 %post
 if [ -f /var/lock/subsys/httpd ]; then
