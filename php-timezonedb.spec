@@ -6,16 +6,16 @@
 # (tpg) define release here
 %if %mandriva_branch == Cooker
 # Cooker
-%define release %mkrel 2
+%define release %mkrel 1
 %else
 # Old distros
 %define subrel 0
-%define release %mkrel 2
+%define release %mkrel 1
 %endif
 
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
-Version:	2011.14
+Version:	2012.3
 Release:	%{release}
 Group:		Development/PHP
 License:	PHP License
