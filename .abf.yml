@@ -2,5 +2,6 @@ removed_sources:
   timezonedb-2012.5.tgz: 5980b26fdf5c5ae95ee3be45e2179550143aa20c
   timezonedb-2013.6.tgz: fc17d11928f856d8f0daaa5fc0f44caf27b0f994
   timezonedb-2014.2.tgz: c676ffbb8e4928269f27f3ae8275411e35a67b33
-sources:
   timezonedb-2014.6.tgz: ac6afc8a2ed4b8e531857ba72f7fd6b529e85fd3
+sources:
+  timezonedb-2014.10.tgz: 4e1560c308afdb8dc0b76c6c5ab5d1db417cf692
