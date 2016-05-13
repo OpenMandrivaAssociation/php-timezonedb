@@ -6,15 +6,15 @@
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
 Epoch:		3
-Version:	2014.10
-Release:	3
+Version:	2016.4
+Release:	1
 Group:		Development/PHP
 License:	PHP License
 Url:		http://pecl.php.net/package/timezonedb/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Source1:	A60_timezonedb.ini
 BuildRequires:	file
-BuildRequires:	php-devel >= 3:5.5.0
+BuildRequires:	php-devel >= 3:7.0.0
 
 %description
 This extension is a drop-in replacement for the builtin timezone database that
