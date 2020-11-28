@@ -1,13 +1,12 @@
 %define modname timezonedb
-%define dirname %{modname}
 %define soname %{modname}.so
 %define inifile A60_%{modname}.ini
 
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
 Epoch:		3
-Version:	2017.2
-Release:	2
+Version:	2020.4
+Release:	1
 Group:		Development/PHP
 License:	PHP License
 Url:		http://pecl.php.net/package/timezonedb/
@@ -41,7 +40,7 @@ find . -type f|xargs file|grep 'text'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 %serverbuild
 
 phpize
-%configure2_5x \
+%configure \
 	--with-libdir=%{_lib} \
 	--with-%{modname}=shared,%{_prefix}
 %make
