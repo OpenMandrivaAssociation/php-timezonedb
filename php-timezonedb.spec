@@ -1,12 +1,14 @@
 %define modname timezonedb
 %define soname %{modname}.so
 %define inifile A60_%{modname}.ini
+# It's ok for php modules to call symbols provided by php
+%define _disable_ld_no_undefined 1
 
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
 Epoch:		3
-Version:	2020.4
-Release:	3
+Version:	2023.3
+Release:	1
 Group:		Development/PHP
 License:	PHP License
 Url:		http://pecl.php.net/package/timezonedb/
@@ -70,4 +72,3 @@ fi
 %doc CREDITS package*.xml
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
