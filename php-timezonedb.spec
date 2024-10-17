@@ -11,7 +11,7 @@ Version:	2023.3
 Release:	2
 Group:		Development/PHP
 License:	PHP License
-Url:		http://pecl.php.net/package/timezonedb/
+Url:		https://pecl.php.net/package/timezonedb/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Source1:	A60_timezonedb.ini
 BuildRequires:	file
