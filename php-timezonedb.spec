@@ -7,8 +7,8 @@
 Summary:	Timezone Database to be used with PHP's date and time functions
 Name:		php-%{modname}
 Epoch:		3
-Version:	2023.3
-Release:	2
+Version:	2025.1
+Release:	1
 Group:		Development/PHP
 License:	PHP License
 Url:		https://pecl.php.net/package/timezonedb/
