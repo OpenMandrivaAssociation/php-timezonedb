@@ -14,6 +14,11 @@ License:	PHP License
 Url:		https://pecl.php.net/package/timezonedb/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Source1:	A60_timezonedb.ini
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	file
 BuildRequires:	php-devel >= 3:7.0.0
 
